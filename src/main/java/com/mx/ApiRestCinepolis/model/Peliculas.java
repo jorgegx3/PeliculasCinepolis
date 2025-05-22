@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /*---ApiRestCinepolis
@@ -20,7 +22,9 @@ PRECIO FLOAT NOT NULL
 
 @Entity
 @Table(name = "PELICULAS")
-@NoArgsConstructor //Constructor vacio
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Peliculas {
 
 	@Id
@@ -41,61 +45,6 @@ public class Peliculas {
 	@Column(name = "PRECIO", columnDefinition = "FLOAT", nullable = false)
 	private Float precio;
 
-	public Peliculas(Long idPelicula, String clavePelicula, String nombrePelicula, String generoPelicula,
-			Float precio) {
-		super();
-		this.idPelicula = idPelicula;
-		this.clavePelicula = clavePelicula;
-		this.nombrePelicula = nombrePelicula;
-		this.generoPelicula = generoPelicula;
-		this.precio = precio;
-	}
-
-	@Override
-	public String toString() {
-		return "Peliculas [idPelicula=" + idPelicula + ", clavePelicula=" + clavePelicula + ", nombrePelicula="
-				+ nombrePelicula + ", generoPelicula=" + generoPelicula + ", precio=" + precio + "]";
-	}
-
-	public Long getIdPelicula() {
-		return idPelicula;
-	}
-
-	public void setIdPelicula(Long idPelicula) {
-		this.idPelicula = idPelicula;
-	}
-
-	public String getClavePelicula() {
-		return clavePelicula;
-	}
-
-	public void setClavePelicula(String clavePelicula) {
-		this.clavePelicula = clavePelicula;
-	}
-
-	public String getNombrePelicula() {
-		return nombrePelicula;
-	}
-
-	public void setNombrePelicula(String nombrePelicula) {
-		this.nombrePelicula = nombrePelicula;
-	}
-
-	public String getGeneroPelicula() {
-		return generoPelicula;
-	}
-
-	public void setGeneroPelicula(String generoPelicula) {
-		this.generoPelicula = generoPelicula;
-	}
-
-	public Float getPrecio() {
-		return precio;
-	}
-
-	public void setNombre(Float precio) {
-		this.precio = precio;
-	}
 	
 	
 }
